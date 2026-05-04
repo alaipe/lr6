@@ -1,0 +1,33 @@
+###
+GET http://localhost:8080/scheme
+###
+GET http://localhost:8080/calculate_kz
+###
+POST http://localhost:8080/scheme
+Content-Type: application/json
+
+{
+  "system": {
+    "S_kz": 80,
+    "U": 220
+  },
+  "transformer": {
+    "S_nom": 80,
+    "U_vn_nom": 242,
+    "U_nn_nom": 10.5,
+    "u_k": 11,
+    "P_k": 320,
+    "type": "ТДЦ-80000/220 У(ХЛ)"
+  },
+  "line": {
+    "L": 50,
+    "x0": 0.406,
+    "r0": 0.204,
+    "marka": "АС 150/19"
+  },
+  "fault_point": "bus_system"
+}
+###
+GET http://localhost:8080/scheme
+###
+GET http://localhost:8080/calculate_kz
