@@ -55,12 +55,12 @@ class TestFunctions(unittest.TestCase):
 
     def test_bus_system(self):
         r=calculate({**data})
-        self.assertAlmostEqual(r["i3_ka"], 0.20994555243259118709423592018253,places=4)
+        self.assertAlmostEqual(r["i3_ka"], 0.2099,places=4)
     def test_bus_nn_tr(self):
         r=calculate({**data, "fault_point": "bus_nn_tr"})
-        self.assertAlmostEqual(r["i3_ka"], 4.2703212172847618900013533838975,places=4)
+        self.assertAlmostEqual(r["i3_ka"], 4.2703,places=4)
     def test_bus_line(self):
         r=calculate({**data, "fault_point": "bus_line"})
-        self.assertAlmostEqual(r["i3_ka"], 0.2307718407374537714551219380288,places=4)
+        self.assertAlmostEqual(r["i3_ka"], 0.2307,places=4)
 if __name__ == "__main__":
     unittest.main()
