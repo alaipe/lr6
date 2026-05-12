@@ -1,7 +1,7 @@
 ###
-GET http://localhost:8080/scheme
+GET http://localhost:8080/scheme?id=2
 ###
-GET http://localhost:8080/calculate_kz
+GET http://localhost:8080/calculate_kz?id=3
 ###
 POST http://localhost:8080/scheme
 Content-Type: application/json
@@ -25,7 +25,7 @@ Content-Type: application/json
     "r0": 0.204,
     "marka": "АС 150/19"
   },
-  "fault_point": "bus_system"
+  "fault_point": "bus_line"
 }
 ###
 GET http://localhost:8080/scheme

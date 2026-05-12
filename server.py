@@ -72,21 +72,23 @@ def calculate(data):
     }
 
 LAST_DATA={}
+id=0
 
 @app.post("/scheme")
 def post_calc(data: dict):
-    global LAST_DATA
-    LAST_DATA = data
+    global LAST_DATA, id
+    id = id + 1
+    LAST_DATA[id]=data
     return {"status": "ok"}
 
 @app.get("/scheme")
-def get_scheme():
-    return LAST_DATA
+def get_scheme(id: int):
+    return LAST_DATA[id]
 
 @app.get("/calculate_kz")
-def get_calc():
-    if LAST_DATA!={}:
-        return calculate(LAST_DATA)
+def get_calc(id: int):
+    if LAST_DATA[id]!={}:
+        return calculate(LAST_DATA[id])
     else:
         return {"status": "Not loaded scheme"}
 
